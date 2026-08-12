@@ -1,195 +1,92 @@
-/* ===================================================
-   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES
-   =================================================== */
+/* Configurações de Cores e Temas */
 :root {
-  --bg-color: #f4f6f9;
-  --text-color: #1a1a1a;
-  --card-bg: #ffffff;
-  --primary-color: #2563eb;
-  --tag-bg: #e0e7ff;
-  --tag-color: #1d4ed8;
-  --code-bg: #e2e8f0;
-  
-  /* Sombras Modo Claro */
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --bg: #f0f4f0;
+    --text: #1b2e1b;
+    --card: #ffffff;
+    --primary: #2d6a4f;
+    --accent: #40916c;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --hover-shadow: rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode {
-  --bg-color: #0f172a;
-  --text-color: #f8fafc;
-  --card-bg: #1e293b;
-  --tag-bg: #1e3a8a;
-  --tag-color: #93c5fd;
-  --code-bg: #334155;
-
-  /* Sombras Modo Escuro (Azul brilhante e suave) */
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  --card-shadow-hover: 0 12px 24px -2px rgba(56, 189, 248, 0.25), 0 0 12px 0 rgba(37, 99, 235, 0.3);
+    --bg: #0b1a13;
+    --text: #d8f3dc;
+    --card: #1b4332;
+    --primary: #95d5b2;
+    --accent: #b7e4c7;
+    /* Sombra mais clara e brilhante para o Dark Mode */
+    --shadow: rgba(149, 213, 178, 0.1);
+    --hover-shadow: rgba(183, 228, 199, 0.3);
 }
 
-/* ===================================================
-   2. ESTILOS GERAIS E LAYOUT
-   =================================================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Estilos de Layout */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  line-height: 1.6;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 10%;
-  background-color: var(--card-bg);
-  box-shadow: var(--card-shadow);
-  transition: background-color 0.3s ease;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%;
+    background: var(--card);
+    box-shadow: 0 2px 10px var(--shadow);
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--text-color);
+.logo span { color: var(--accent); }
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    margin: 0 15px;
+    font-weight: 500;
 }
 
-.logo span {
-  color: var(--primary-color);
+nav a.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+
+.container { padding: 3rem 10%; }
+
+.hero { text-align: center; margin-bottom: 4rem; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.nav {
-  display: flex;
-  gap: 1.5rem;
+/* --- REGRAS DO DESAFIO (HOVER E SCALE) --- */
+.card {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 500;
-  opacity: 0.7;
-  transition: opacity 0.2s ease, color 0.2s ease;
+.card:hover {
+    transform: scale(1.02); /* Aumento leve solicitado */
+    box-shadow: 0 10px 25px var(--hover-shadow); /* Sombra mais intensa */
 }
 
-.nav a:hover,
-.nav a.active {
-  opacity: 1;
-  color: var(--primary-color);
+.badge {
+    background: var(--accent);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
 }
 
-#theme-toggle {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 20px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  cursor: pointer;
-  font-weight: bold;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-#theme-toggle:active {
-  transform: scale(0.95);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.section-title {
-  margin-bottom: 1.5rem;
-  font-size: 1.6rem;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-/* ===================================================
-   3. ESTILIZAÇÃO DOS CARDS E EFEITO :hover
-   =================================================== */
-article.card {
-  background-color: var(--card-bg);
-  padding: 1.8rem;
-  border-radius: 12px;
-  box-shadow: var(--card-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-article.card:hover {
-  transform: scale(1.02);
-  box-shadow: var(--card-shadow-hover);
-}
-
-.tag {
-  display: inline-block;
-  background-color: var(--tag-bg);
-  color: var(--tag-color);
-  padding: 0.25rem 0.75rem;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.tag-success {
-  background-color: #d1fae5;
-  color: #065f46;
-}
-
-.tag-warning {
-  background-color: #fef3c7;
-  color: #92400e;
-}
-
-.tag-info {
-  background-color: #e0f2fe;
-  color: #0369a1;
-}
-
-.card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.75rem;
-}
-
-.card p {
-  opacity: 0.85;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-}
-
-code {
-  background-color: var(--code-bg);
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 0.9em;
-}
-
-.read-more {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: bold;
+#theme-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
 }
