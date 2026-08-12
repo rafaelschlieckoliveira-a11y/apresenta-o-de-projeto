@@ -1,15 +1,15 @@
-# 🚀 DevLog - Blog & Documentação Completa do Projeto
+# 🌿 EcoTracker - Soluções Sustentáveis
 
-Plataforma Web multi-páginas de tecnologia desenvolvida com HTML5, CSS3 e JavaScript. O projeto conta com suporte a **Modo Escuro (Dark Mode)**, animações interativas e seções completas de testes de usabilidade e reflexões finais sobre o processo de criação.
+O **EcoTracker** é um projeto acadêmico desenvolvido para monitorar e incentivar hábitos sustentáveis. Este repositório contém a interface completa do protótipo, documentação de testes e reflexões finais do grupo.
 
-## 📌 Estrutura de Páginas
-* **Início (`index.html`):** Destaques e artigos recentes.
-* **Artigos (`articles.html`):** Listagem de publicações de tecnologia.
-* **Sobre (`about.html`):** Apresentação e propósito do DevLog.
-* **Feedback (`docs.html`):** Aprendizados obtidos durante os testes de usabilidade com usuários.
-* **Reflexões (`reflection.html`):** As principais descobertas do grupo durante todo o ciclo de desenvolvimento.
+## 🚀 Funcionalidades
+- **Interface Interativa:** Cartões com feedback visual (Scale 1.02).
+- **Modo Escuro Inteligente:** Sombras adaptadas para profundidade em fundos escuros.
+- **Documentação Integrada:** Páginas de feedback e reflexões do processo de design.
 
-## 🛠️ Tecnologias Utilizadas
-* **HTML5:** Estrutura semântica e acessível.
-* **CSS3:** Variáveis de temas, CSS Grid, Transitions e microinterações com o seletor `:hover`.
-* **JavaScript (Vanilla):** Controle de tema (Claro/Escuro) e persistência de estado via `localStorage`.
+## 📁 Estrutura de Arquivos
+- `index.html`: Página inicial com a missão do projeto.
+- `feedback.html`: Relatório de testes com usuários.
+- `reflexoes.html`: Descobertas importantes do grupo (Fim da Unidade).
+- `style.css`: Estilização completa e temas.
+- `script.js`: Lógica de alternância de tema e persistência.
