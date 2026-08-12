@@ -56,3 +56,53 @@
   <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevLog | Reflexões do Projeto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">DevLog <span>_</span></a>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="articles.html">Artigos</a>
+      <a href="about.html">Sobre</a>
+      <a href="docs.html">Feedback</a>
+      <a href="reflection.html" class="active">Reflexões</a>
+    </nav>
+    <button id="theme-toggle" aria-label="Alternar Tema">🌙 Modo Escuro</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Reflexões & Descobertas do Grupo</h2>
+      <p>Uma análise sobre a evolução do projeto e os aprendizados durante o processo de criação.</p>
+    </section>
+
+    <section class="cards-grid">
+      
+      <article class="card">
+        <span class="tag tag-info">Descoberta 01 — Solução e Design</span>
+        <h2>Microinterações Transformam a Experiência do Usuário</h2>
+        <p><strong>O que aprendemos:</strong> Descobrimos que pequenas adições visuais, como o efeito de elevação no <code>:hover</code> com <code>transform: scale(1.02)</code> e o ajuste proporcional das sombras, mudam drasticamente a percepção de qualidade da aplicação.</p>
+        <p><strong>Impacto:</strong> A interface deixou de ser um layout estático e passou a parecer um produto profissional e dinâmico, aumentando o engajamento de quem navega.</p>
+      </article>
+
+      <article class="card">
+        <span class="tag tag-info">Descoberta 02 — Processo e Metodologia</span>
+        <h2>O Ciclo de Testes Guiou a Evolução do Projeto</h2>
+        <p><strong>O que aprendemos:</strong> Percebemos que testar o protótipo com outras pessoas revelou necessidades que a equipe não tinha previsto inicialmente, como o salvamento da preferência de tema no <code>localStorage</code> e indicadores visuais de navegação.</p>
+        <p><strong>Impacto:</strong> Essa etapa de feedback evitou que o projeto continuasse com problemas de usabilidade, mostrando que a prototipagem rápida e o teste contínuo são indispensáveis na criação de software.</p>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
